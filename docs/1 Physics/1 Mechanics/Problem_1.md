@@ -3,11 +3,13 @@
 **Investigating the Range as a Function of the Angle of Projection**
 
 ### **1. Theoretical Foundation**
-Projectile motion follows the laws of classical mechanics and is governed by Newton’s equations of motion. We consider a projectile launched with an initial velocity \( v_0 \) at an angle \( \theta \) to the horizontal.
+Projectile motion follows the laws of classical mechanics and is governed by Newton’s equations of motion. We consider a projectile launched with an initial velocity $v_0$ at an angle $theta$ to the horizontal.
 
 #### **Equations of Motion**
 - Horizontal motion:
-  \[ x = v_0 \cos(\theta) t \]
+
+  $$x = v_0 \cos(\theta) t$$
+
 - Vertical motion:
   \[ y = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \]
   where \( g \) is the acceleration due to gravity.
