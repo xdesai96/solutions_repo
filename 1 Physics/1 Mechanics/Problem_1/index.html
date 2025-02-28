@@ -242,27 +242,6 @@ R = \frac{v_0^2 \sin(2\theta)}{g}
 - <strong>Launching angles</strong>: For different types of projectiles (e.g., rockets), the optimal launch angle may vary depending on factors like aerodynamics and fuel efficiency.</p>
 <h2 id="4-implementation">4. Implementation</h2>
 <p>To simulate projectile motion and visualize the range as a function of the launch angle, we can write a Python script to calculate the range for different launch angles.</p>
-<p>Here's an example Python code to simulate projectile motion and plot the range as a function of the launch angle:</p>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<h1 id="constants">Constants</h1>
-<p>g = 9.81  # acceleration due to gravity (m/s^2)
-v_0 = 50  # initial velocity (m/s)</p>
-<h1 id="function-to-calculate-range-for-a-given-angle">Function to calculate range for a given angle</h1>
-<p>def calculate_range(v_0, theta, g):
-    return (v_0**2 * np.sin(2 * np.radians(theta))) / g</p>
-<h1 id="angles-from-0-to-90-degrees">Angles from 0 to 90 degrees</h1>
-<p>angles = np.linspace(0, 90, 100)</p>
-<h1 id="calculate-range-for-each-angle">Calculate range for each angle</h1>
-<p>ranges = [calculate_range(v_0, angle, g) for angle in angles]</p>
-<h1 id="plot-the-range-as-a-function-of-the-angle">Plot the range as a function of the angle</h1>
-<p>plt.plot(angles, ranges)
-plt.xlabel('Launch Angle (degrees)')
-plt.ylabel('Range (meters)')
-plt.title('Range of a Projectile as a Function of Launch Angle')
-plt.grid(True)
-plt.show()```</p>
 <p><img alt="alt text" src="../Untitled.png"/></p>
 </div>
 </div><footer>
