@@ -48,22 +48,6 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#equations-of-motion">Equations of Motion</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#2-analysis-of-the-range">2. Analysis of the Range</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#3-practical-applications">3. Practical Applications</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#4-implementation">4. Implementation</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#python-code-for-simulation">Python Code for Simulation</a>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -188,64 +172,84 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p><strong>Investigating the Range as a Function of the Angle of Projection</strong></p>
-<h3 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h3>
-<p>Projectile motion follows the laws of classical mechanics and is governed by Newton’s equations of motion. We consider a projectile launched with an initial velocity <span class="arithmatex">\(v_0\)</span> at an angle <span class="arithmatex">\(theta\)</span> to the horizontal.</p>
-<h4 id="equations-of-motion"><strong>Equations of Motion</strong></h4>
-<ul>
-<li>Horizontal motion:</li>
-</ul>
-<p><span class="arithmatex">\(<span class="arithmatex">\(x = v_0 \cos(\theta) t\)</span>\)</span></p>
-<ul>
-<li>Vertical motion:
-  [ y = v_0 \sin(\theta) t - \frac{1}{2} g t^2 ]
-  where <span class="arithmatex">\( g \)</span> is the acceleration due to gravity.</li>
-</ul>
-<p>To find the time of flight, we set <span class="arithmatex">\( y = 0 \)</span> and solve for <span class="arithmatex">\( t \)</span>:
-[ t = \frac{2 v_0 \sin(\theta)}{g} ]</p>
-<p>The horizontal range <span class="arithmatex">\( R \)</span> is given by:
-[ R = v_0 \cos(\theta) \times \frac{2 v_0 \sin(\theta)}{g} ]
-Using the trigonometric identity <span class="arithmatex">\( 2\sin(\theta)\cos(\theta) = \sin(2\theta) \)</span>, we get:
-[ R = \frac{v_0^2 \sin(2\theta)}{g} ]</p>
-<p>This equation shows that the range depends on the initial velocity, gravitational acceleration, and angle of projection.</p>
-<h3 id="2-analysis-of-the-range"><strong>2. Analysis of the Range</strong></h3>
-<ul>
-<li>The maximum range occurs at <span class="arithmatex">\( \theta = 45^\circ \)</span>, where <span class="arithmatex">\( \sin(2\theta) \)</span> is maximized.</li>
-<li>Higher initial velocity <span class="arithmatex">\( v_0 \)</span> results in a longer range.</li>
-<li>A stronger gravitational field <span class="arithmatex">\( g \)</span> shortens the range.</li>
-<li>If the projectile is launched from an elevated height, the range extends due to additional time before impact.</li>
-</ul>
-<h3 id="3-practical-applications"><strong>3. Practical Applications</strong></h3>
-<ul>
-<li><strong>Sports:</strong> Calculating the optimal angle for throwing or kicking a ball.</li>
-<li><strong>Engineering:</strong> Designing trajectories for ballistic missiles or rockets.</li>
-<li><strong>Gaming and Animation:</strong> Simulating realistic projectile motion in video games.</li>
-</ul>
-<h3 id="4-implementation"><strong>4. Implementation</strong></h3>
-<p>To visualize the range as a function of the angle of projection, we can write a Python simulation using Matplotlib.</p>
-<h4 id="python-code-for-simulation"><strong>Python Code for Simulation</strong></h4>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
-def projectile_range(v0, g=9.81):
-    angles = np.linspace(0, 90, 100)
-    ranges = (v0**2 * np.sin(2 * np.radians(angles))) / g
-
-    plt.figure(figsize=(8, 5))
-    plt.plot(angles, ranges, label=f'Initial velocity = {v0} m/s')
-    plt.xlabel('Launch Angle (degrees)')
-    plt.ylabel('Range (m)')
-    plt.title('Projectile Range as a Function of Angle')
-    plt.legend()
-    plt.grid()
-    plt.show()
-
-# Example usage
-projectile_range(v0=20)
-</code></pre>
-<p>This code simulates how the range changes with the angle of projection for a given initial velocity.</p>
-<hr/>
-<p>This study demonstrates the dependence of projectile range on launch angle and other physical parameters, providing insights applicable in physics, engineering, and entertainment.</p>
+<h1 id="problem-1-investigating-the-range-as-a-function-of-the-angle-of-projection">Problem 1: Investigating the Range as a Function of the Angle of Projection</h1>
+<h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
+<p>To derive the governing equations of motion for projectile motion, we will first break the motion into two components: horizontal and vertical. The equations governing these components arise from Newton's second law of motion.</p>
+<h3 id="horizontal-motion">Horizontal Motion:</h3>
+<p>Since there is no acceleration in the horizontal direction (neglecting air resistance), the horizontal velocity remains constant:</p>
+<div class="arithmatex">\[
+v_x = v_0 \cos(\theta)
+\]</div>
+<p>where:
+- <span class="arithmatex">\( v_0 \)</span> is the initial velocity,
+- <span class="arithmatex">\( \theta \)</span> is the angle of projection.</p>
+<p>The horizontal displacement <span class="arithmatex">\( x(t) \)</span> is given by the equation:</p>
+<div class="arithmatex">\[
+x(t) = v_0 \cos(\theta) \cdot t
+\]</div>
+<h3 id="vertical-motion">Vertical Motion:</h3>
+<p>The vertical motion is influenced by gravity, with the acceleration due to gravity acting downward. The vertical velocity at time <span class="arithmatex">\( t \)</span> is:</p>
+<div class="arithmatex">\[
+v_y(t) = v_0 \sin(\theta) - g \cdot t
+\]</div>
+<p>where:
+- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity.</p>
+<p>The vertical displacement <span class="arithmatex">\( y(t) \)</span> is given by:</p>
+<div class="arithmatex">\[
+y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
+\]</div>
+<p>where the term <span class="arithmatex">\( \frac{1}{2} g t^2 \)</span> represents the effect of gravity.</p>
+<h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
+<p>The range of the projectile is defined as the horizontal distance it travels before it hits the ground. To find this range, we need to solve for the time of flight <span class="arithmatex">\( t_{\text{f}} \)</span> when <span class="arithmatex">\( y(t) = 0 \)</span> (the projectile hits the ground).</p>
+<p>Setting <span class="arithmatex">\( y(t_{\text{f}}) = 0 \)</span>:</p>
+<div class="arithmatex">\[
+0 = v_0 \sin(\theta) \cdot t_{\text{f}} - \frac{1}{2} g t_{\text{f}}^2
+\]</div>
+<p>This is a quadratic equation in <span class="arithmatex">\( t_{\text{f}} \)</span>. Solving for <span class="arithmatex">\( t_{\text{f}} \)</span>, we get:</p>
+<div class="arithmatex">\[
+t_{\text{f}} = \frac{2 v_0 \sin(\theta)}{g}
+\]</div>
+<p>This is the time it takes for the projectile to hit the ground.</p>
+<p>Now, we substitute <span class="arithmatex">\( t_{\text{f}} \)</span> into the equation for horizontal displacement to find the range <span class="arithmatex">\( R \)</span>:</p>
+<div class="arithmatex">\[
+R = v_0 \cos(\theta) \cdot t_{\text{f}} = v_0 \cos(\theta) \cdot \frac{2 v_0 \sin(\theta)}{g}
+\]</div>
+<p>Simplifying:</p>
+<div class="arithmatex">\[
+R = \frac{v_0^2 \sin(2\theta)}{g}
+\]</div>
+<p>This is the general equation for the range of a projectile. It shows that the range depends on:
+- The initial velocity <span class="arithmatex">\( v_0 \)</span>,
+- The launch angle <span class="arithmatex">\( \theta \)</span>,
+- The acceleration due to gravity <span class="arithmatex">\( g \)</span>.</p>
+<h2 id="3-practical-applications">3. Practical Applications</h2>
+<p>In real-world scenarios, this model can be extended to account for factors such as:
+- <strong>Air resistance</strong>: In reality, air resistance significantly affects the motion of the projectile, especially for objects with large surface areas or at high speeds. The range can be reduced due to drag forces.
+- <strong>Uneven terrain</strong>: If the projectile is launched from or lands on uneven terrain (e.g., a hill), the range calculation will need to consider the change in launch and landing elevations.
+- <strong>Launching angles</strong>: For different types of projectiles (e.g., rockets), the optimal launch angle may vary depending on factors like aerodynamics and fuel efficiency.</p>
+<h2 id="4-implementation">4. Implementation</h2>
+<p>To simulate projectile motion and visualize the range as a function of the launch angle, we can write a Python script to calculate the range for different launch angles.</p>
+<p>Here's an example Python code to simulate projectile motion and plot the range as a function of the launch angle:</p>
+<p>```python
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<h1 id="constants">Constants</h1>
+<p>g = 9.81  # acceleration due to gravity (m/s^2)
+v_0 = 50  # initial velocity (m/s)</p>
+<h1 id="function-to-calculate-range-for-a-given-angle">Function to calculate range for a given angle</h1>
+<p>def calculate_range(v_0, theta, g):
+    return (v_0**2 * np.sin(2 * np.radians(theta))) / g</p>
+<h1 id="angles-from-0-to-90-degrees">Angles from 0 to 90 degrees</h1>
+<p>angles = np.linspace(0, 90, 100)</p>
+<h1 id="calculate-range-for-each-angle">Calculate range for each angle</h1>
+<p>ranges = [calculate_range(v_0, angle, g) for angle in angles]</p>
+<h1 id="plot-the-range-as-a-function-of-the-angle">Plot the range as a function of the angle</h1>
+<p>plt.plot(angles, ranges)
+plt.xlabel('Launch Angle (degrees)')
+plt.ylabel('Range (meters)')
+plt.title('Range of a Projectile as a Function of Launch Angle')
+plt.grid(True)
+plt.show()</p>
 <p><img alt="alt text" src="../Untitled.png"/></p>
 </div>
 </div><footer>
