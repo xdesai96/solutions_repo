@@ -85,34 +85,4 @@ In real-world scenarios, this model can be extended to account for factors such 
 
 To simulate projectile motion and visualize the range as a function of the launch angle, we can write a Python script to calculate the range for different launch angles.
 
-Here's an example Python code to simulate projectile motion and plot the range as a function of the launch angle:
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Constants
-g = 9.81  # acceleration due to gravity (m/s^2)
-v_0 = 50  # initial velocity (m/s)
-
-# Function to calculate range for a given angle
-def calculate_range(v_0, theta, g):
-    return (v_0**2 * np.sin(2 * np.radians(theta))) / g
-
-# Angles from 0 to 90 degrees
-angles = np.linspace(0, 90, 100)
-
-# Calculate range for each angle
-ranges = [calculate_range(v_0, angle, g) for angle in angles]
-
-# Plot the range as a function of the angle
-plt.plot(angles, ranges)
-plt.xlabel('Launch Angle (degrees)')
-plt.ylabel('Range (meters)')
-plt.title('Range of a Projectile as a Function of Launch Angle')
-plt.grid(True)
-plt.show()```
-
-
-
 ![alt text](Untitled.png)
