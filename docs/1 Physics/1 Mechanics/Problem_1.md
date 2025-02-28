@@ -111,7 +111,7 @@ plt.xlabel('Launch Angle (degrees)')
 plt.ylabel('Range (meters)')
 plt.title('Range of a Projectile as a Function of Launch Angle')
 plt.grid(True)
-plt.show()
+plt.show()```
 
 
 
