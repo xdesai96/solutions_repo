@@ -65,3 +65,5 @@ This code simulates how the range changes with the angle of projection for a giv
 ---
 This study demonstrates the dependence of projectile range on launch angle and other physical parameters, providing insights applicable in physics, engineering, and entertainment.
 
+
+![alt text](Untitled.png)
