@@ -1,7 +1,5 @@
 # Problem 1
 
-# Problem 1: Investigating the Range as a Function of the Angle of Projection
-
 ## 1. Theoretical Foundation
 
 To derive the governing equations of motion for projectile motion, we will first break the motion into two components: horizontal and vertical. The equations governing these components arise from Newton's second law of motion.
