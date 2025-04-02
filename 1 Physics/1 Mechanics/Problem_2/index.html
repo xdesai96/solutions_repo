@@ -195,29 +195,51 @@
 <ul>
 <li>Start with the differential equation governing the motion of a forced damped pendulum:</li>
 </ul>
-<p>[ \frac{d^2\theta}{dt^2} + \beta \frac{d\theta}{dt} + \omega_0^2 \sin \theta = A \cos(\omega t) ]</p>
+<p>$$ \frac{d^2\theta}{dt^2} + \beta \frac{d\theta}{dt} + \omega_0^2 \sin \theta = A \cos(\omega t) $$</p>
 <ul>
-<li>Derive the approximate solutions for small-angle oscillations.</li>
-<li>Explore resonance conditions and their implications for the system's energy.</li>
+<li><strong>Approximate solutions for small-angle oscillations:</strong>
+  Assuming small oscillations, we approximate <span class="arithmatex">\( \sin\theta \approx \theta \)</span>, leading to the linearized equation:</li>
 </ul>
+<p>$$ \frac{d^2\theta}{dt^2} + \beta \frac{d\theta}{dt} + \omega_0^2 \theta = A \cos(\omega t) $$</p>
+<p>The solution consists of a transient term (which decays over time) and a steady-state term of the form:</p>
+<p>$$ \theta(t) = C e^{-\beta t} + B \cos(\omega t - \phi) $$</p>
+<p>where <span class="arithmatex">\( B \)</span> and <span class="arithmatex">\( \phi \)</span> depend on the driving frequency <span class="arithmatex">\( \omega \)</span> and damping coefficient <span class="arithmatex">\( \beta \)</span>.</p>
+<ul>
+<li><strong>Resonance conditions:</strong>
+  Resonance occurs when the driving frequency <span class="arithmatex">\( \omega \)</span> is close to the natural frequency <span class="arithmatex">\( \omega_0 \)</span>, leading to a large response amplitude. The resonance frequency is:</li>
+</ul>
+<p>$$ \omega_{res} = \sqrt{\omega_0^2 - \frac{\beta^2}{2}} $$</p>
+<p>At resonance, energy absorption from the external force is maximized, which is crucial in engineering applications like vibration isolation.</p>
 <h3 id="2-analysis-of-dynamics">2. Analysis of Dynamics</h3>
 <ul>
-<li>Investigate how the damping coefficient, driving amplitude, and driving frequency influence the motion of the pendulum.</li>
-<li>Examine the transition between regular and chaotic motion and their physical interpretations.</li>
+<li><strong>Influence of system parameters:</strong></li>
+<li><strong>Damping coefficient (<span class="arithmatex">\( \beta \)</span>)</strong>: Higher damping suppresses oscillations and limits chaotic behavior.</li>
+<li><strong>Driving amplitude (<span class="arithmatex">\( A \)</span>)</strong>: Larger amplitudes can lead to chaotic motion.</li>
+<li>
+<p><strong>Driving frequency (<span class="arithmatex">\( \omega \)</span>)</strong>: Determines whether the system exhibits periodic, quasiperiodic, or chaotic motion.</p>
+</li>
+<li>
+<p><strong>Transition to chaos:</strong></p>
+</li>
+<li>At low driving amplitudes, the motion is periodic.</li>
+<li>As <span class="arithmatex">\( A \)</span> increases, bifurcations occur, leading to quasiperiodic and then chaotic motion.</li>
+<li>Poincaré sections can be used to visualize the transition to chaos.</li>
 </ul>
 <h3 id="3-practical-applications">3. Practical Applications</h3>
 <ul>
-<li>Discuss real-world scenarios where the forced damped pendulum model applies, such as:</li>
-<li>Energy harvesting devices</li>
-<li>Suspension bridges</li>
-<li>Oscillating circuits</li>
+<li><strong>Energy Harvesting:</strong> Forced damped pendulums are used in energy harvesting devices, where external vibrations drive oscillations that convert mechanical energy into electrical power.</li>
+<li><strong>Suspension Bridges:</strong> The forced damped pendulum model helps in understanding resonance effects in structures like bridges and skyscrapers.</li>
+<li><strong>Oscillating Circuits:</strong> The pendulum equation is analogous to driven RLC circuits in electronics.</li>
 </ul>
 <h3 id="4-implementation">4. Implementation</h3>
 <ul>
-<li>Create a computational model to simulate the motion of a forced damped pendulum.</li>
-<li>Visualize the behavior under various damping, driving force, and initial conditions.</li>
-<li>Plot phase diagrams and Poincaré sections to illustrate transitions to chaos.</li>
+<li><strong>Computational Model:</strong> The equation can be solved numerically using methods like Runge-Kutta to analyze different parameter regimes.</li>
+<li><strong>Visualization:</strong></li>
+<li><strong>Time series plots</strong>: Show how the pendulum's angle evolves over time.</li>
+<li><strong>Phase diagrams</strong>: Reveal stable and chaotic regimes.</li>
+<li><strong>Poincaré sections</strong>: Indicate the transition from regular to chaotic motion.</li>
 </ul>
+<p>Using numerical simulations, we can explore bifurcation diagrams and Lyapunov exponents to quantify chaos.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
