@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 2 - Physics and Mathematics</title>
+<title>Escape Velocities and Cosmic Velocities - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 2";
+        var mkdocs_page_name = "Escape Velocities and Cosmic Velocities";
         var mkdocs_page_input_path = "1 Physics/2 Gravity/Problem_2.md";
         var mkdocs_page_url = null;
       </script>
@@ -56,8 +56,24 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Orbital Period and Orbital Radius</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Escape Velocities and Cosmic Velocities</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-and-solution">Task and Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-definition-of-cosmic-velocities">1. Definition of Cosmic Velocities</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-analysis-of-the-mathematical-derivations-and-parameters">2. Analysis of the Mathematical Derivations and Parameters</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-calculation-and-visualization-for-different-celestial-bodies">3. Calculation and Visualization for Different Celestial Bodies</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-importance-in-space-exploration">4. Importance in Space Exploration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-graphical-representations">5. Graphical Representations</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_3/">Problem 3</a>
@@ -163,7 +179,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">2 Gravity</li>
-<li class="breadcrumb-item active">Problem 2</li>
+<li class="breadcrumb-item active">Escape Velocities and Cosmic Velocities</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +187,93 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-2">Problem 2</h1>
+<h1 id="escape-velocities-and-cosmic-velocities">Escape Velocities and Cosmic Velocities</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The concept of escape velocity is crucial for understanding the conditions required to leave a celestial body's gravitational influence. Extending this concept, the first, second, and third cosmic velocities define the thresholds for orbiting, escaping, and leaving a star system. These principles underpin modern space exploration, from launching satellites to interplanetary missions.</p>
+<h2 id="task-and-solution">Task and Solution</h2>
+<h3 id="1-definition-of-cosmic-velocities">1. Definition of Cosmic Velocities</h3>
+<ul>
+<li><strong>First Cosmic Velocity</strong>:
+  The first cosmic velocity is the minimum speed an object must have to enter a circular orbit around a celestial body without any additional propulsion. It is the orbital velocity needed to counterbalance the gravitational force acting on the object.</li>
+</ul>
+<p>The formula for the first cosmic velocity is:</p>
+<p>[
+  v_1 = \sqrt{\frac{GM}{r}}
+  ]</p>
+<p>where:
+  - <span class="arithmatex">\( G \)</span> is the gravitational constant (<span class="arithmatex">\( 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} \)</span>),
+  - <span class="arithmatex">\( M \)</span> is the mass of the celestial body,
+  - <span class="arithmatex">\( r \)</span> is the radius of the celestial body (distance from the center).</p>
+<ul>
+<li><strong>Second Cosmic Velocity</strong>:
+  The second cosmic velocity is the minimum speed an object must have to escape the gravitational pull of the celestial body. It corresponds to the escape velocity, which allows the object to move indefinitely away from the body.</li>
+</ul>
+<p>The formula for the second cosmic velocity is:</p>
+<p>[
+  v_2 = \sqrt{\frac{2GM}{r}}
+  ]</p>
+<p>This velocity is derived from the energy balance between kinetic and gravitational potential energy. </p>
+<ul>
+<li><strong>Third Cosmic Velocity</strong>:
+  The third cosmic velocity is the minimum speed required for an object to escape the gravitational influence of the entire solar system (or another stellar system). It is the velocity required to escape the gravitational influence of the Sun (or another star) at the distance of the celestial body.</li>
+</ul>
+<p>The formula for the third cosmic velocity is:</p>
+<p>[
+  v_3 = \sqrt{\frac{3GM}{r}}
+  ]</p>
+<p>This is derived from the assumption that the object must leave the gravitational pull of the Sun (or other central star), considering the Sun's gravitational pull at a distance from Earth.</p>
+<h3 id="2-analysis-of-the-mathematical-derivations-and-parameters">2. Analysis of the Mathematical Derivations and Parameters</h3>
+<ul>
+<li>
+<p><strong>Escape Velocity</strong>:
+  Escape velocity is the minimum velocity an object needs to break free from the gravitational influence of a celestial body without any further propulsion. It depends on the mass <span class="arithmatex">\( M \)</span> of the body and the radius <span class="arithmatex">\( r \)</span> from its center.</p>
+</li>
+<li>
+<p><strong>Cosmic Velocities and Their Relation</strong>:</p>
+</li>
+<li>The first cosmic velocity depends on the mass and radius of the celestial body and gives the velocity for stable orbiting.</li>
+<li>The second cosmic velocity is related to the gravitational binding energy of the body and allows the object to escape.</li>
+<li>The third cosmic velocity takes into account the object’s ability to escape the entire stellar system.</li>
+</ul>
+<h3 id="3-calculation-and-visualization-for-different-celestial-bodies">3. Calculation and Visualization for Different Celestial Bodies</h3>
+<p>Below are the escape velocities and cosmic velocities calculated for Earth, Mars, and Jupiter:</p>
+<ul>
+<li><strong>Earth</strong>:</li>
+<li>Mass <span class="arithmatex">\( M_{\text{Earth}} = 5.972 \times 10^{24} \, \text{kg} \)</span></li>
+<li>
+<p>Radius <span class="arithmatex">\( r_{\text{Earth}} = 6.371 \times 10^{6} \, \text{m} \)</span></p>
+</li>
+<li>
+<p><strong>Mars</strong>:</p>
+</li>
+<li>Mass <span class="arithmatex">\( M_{\text{Mars}} = 6.417 \times 10^{23} \, \text{kg} \)</span></li>
+<li>
+<p>Radius <span class="arithmatex">\( r_{\text{Mars}} = 3.396 \times 10^{6} \, \text{m} \)</span></p>
+</li>
+<li>
+<p><strong>Jupiter</strong>:</p>
+</li>
+<li>Mass <span class="arithmatex">\( M_{\text{Jupiter}} = 1.898 \times 10^{27} \, \text{kg} \)</span></li>
+<li>Radius <span class="arithmatex">\( r_{\text{Jupiter}} = 6.991 \times 10^{7} \, \text{m} \)</span></li>
+</ul>
+<h3 id="4-importance-in-space-exploration">4. Importance in Space Exploration</h3>
+<ul>
+<li>
+<p><strong>Launching Satellites</strong>:
+  The first cosmic velocity is crucial for satellite launches. It ensures that satellites can maintain a stable orbit around Earth or other planets without falling back to the surface.</p>
+</li>
+<li>
+<p><strong>Interplanetary Missions</strong>:
+  The second cosmic velocity is critical for interplanetary missions, enabling spacecraft to escape a planet's gravitational pull and travel to other planets.</p>
+</li>
+<li>
+<p><strong>Interstellar Travel</strong>:
+  The third cosmic velocity is an idealized concept, but it highlights the immense speeds required to escape the gravitational influence of a star system, which is important when considering future interstellar travel.</p>
+</li>
+</ul>
+<h3 id="5-graphical-representations">5. Graphical Representations</h3>
+<p>To visualize these velocities for different celestial bodies (Earth, Mars, Jupiter), the escape velocities and cosmic velocities can be plotted as a function of the radius of the celestial bodies. The graphs help illustrate how these velocities scale with the size and mass of the body.</p>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
