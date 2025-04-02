@@ -11,12 +11,12 @@ The concept of escape velocity is crucial for understanding the conditions requi
 
   The formula for the first cosmic velocity is:
 
-  \[
+  $$
   v_1 = \sqrt{\frac{GM}{r}}
-  \]
+  $$
 
   where:
-  - \( G \) is the gravitational constant (\( 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} \)),
+  - \( G \) is the gravitational constant $$ 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} $$
   - \( M \) is the mass of the celestial body,
   - \( r \) is the radius of the celestial body (distance from the center).
 
@@ -25,20 +25,20 @@ The concept of escape velocity is crucial for understanding the conditions requi
 
   The formula for the second cosmic velocity is:
 
-  \[
+  $$
   v_2 = \sqrt{\frac{2GM}{r}}
-  \]
+  $$
 
-  This velocity is derived from the energy balance between kinetic and gravitational potential energy. 
+  This velocity is derived from the energy balance between kinetic and gravitational potential energy.
 
 - **Third Cosmic Velocity**:
   The third cosmic velocity is the minimum speed required for an object to escape the gravitational influence of the entire solar system (or another stellar system). It is the velocity required to escape the gravitational influence of the Sun (or another star) at the distance of the celestial body.
 
   The formula for the third cosmic velocity is:
 
-  \[
-  v_3 = \sqrt{\frac{3GM}{r}}
-  \]
+  $$
+  v_3 = \sqrt{\frac{2GM_{\text{Солнце}}}{r}}
+  $$
 
   This is derived from the assumption that the object must leave the gravitational pull of the Sun (or other central star), considering the Sun's gravitational pull at a distance from Earth.
 
@@ -55,21 +55,21 @@ The concept of escape velocity is crucial for understanding the conditions requi
 Below are the escape velocities and cosmic velocities calculated for Earth, Mars, and Jupiter:
 
 - **Earth**:
-  - Mass \( M_{\text{Earth}} = 5.972 \times 10^{24} \, \text{kg} \)
-  - Radius \( r_{\text{Earth}} = 6.371 \times 10^{6} \, \text{m} \)
+  - $Mass$ $$ M_{\text{Earth}} = 5.972 \times 10^{24} \, \text{кг} $$
+  - $Radius$ $$ r_{\text{Earth}} = 6.371 \times 10^{6} \, \text{м} $$
 
 - **Mars**:
-  - Mass \( M_{\text{Mars}} = 6.417 \times 10^{23} \, \text{kg} \)
-  - Radius \( r_{\text{Mars}} = 3.396 \times 10^{6} \, \text{m} \)
+  - $Mass$ $$ M_{\text{Mars}} = 6.417 \times 10^{23} \, \text{кг} $$
+  - $Radius$ $$ r_{\text{Mars}} = 3.396 \times 10^{6} \, \text{м} $$
 
 - **Jupiter**:
-  - Mass \( M_{\text{Jupiter}} = 1.898 \times 10^{27} \, \text{kg} \)
-  - Radius \( r_{\text{Jupiter}} = 6.991 \times 10^{7} \, \text{m} \)
+  - $Mass$ $$ M_{\text{Jupiter}} = 1.898 \times 10^{27} \, \text{кг} $$
+  - $Radius$ $$ r_{\text{Jupiter}} = 6.991 \times 10^{7} \, \text{м} $$
 
 ### 4. Importance in Space Exploration
 - **Launching Satellites**:
   The first cosmic velocity is crucial for satellite launches. It ensures that satellites can maintain a stable orbit around Earth or other planets without falling back to the surface.
-  
+
 - **Interplanetary Missions**:
   The second cosmic velocity is critical for interplanetary missions, enabling spacecraft to escape a planet's gravitational pull and travel to other planets.
 
