@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Orbital Period and Orbital Radius - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Orbital Period and Orbital Radius";
         var mkdocs_page_input_path = "1 Physics/2 Gravity/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -54,8 +54,22 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">2 Gravity</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Orbital Period and Orbital Radius</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-and-solution">Task and Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-derivation-of-the-relationship">1. Derivation of the Relationship</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-implications-for-astronomy">2. Implications for Astronomy</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-real-world-examples">3. Real-World Examples</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-extension-to-elliptical-orbits">4. Extension to Elliptical Orbits</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -163,7 +177,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">2 Gravity</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Orbital Period and Orbital Radius</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +185,51 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="orbital-period-and-orbital-radius">Orbital Period and Orbital Radius</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The relationship between the square of the orbital period and the cube of the orbital radius, known as <strong>Kepler's Third Law</strong>, is a cornerstone of celestial mechanics. This simple yet profound relationship allows for the determination of planetary motions and has implications for understanding gravitational interactions on both local and cosmic scales. By analyzing this relationship, one can connect fundamental principles of gravity with real-world phenomena such as satellite orbits and planetary systems.</p>
+<h2 id="task-and-solution">Task and Solution</h2>
+<h3 id="1-derivation-of-the-relationship">1. Derivation of the Relationship</h3>
+<p>For a small body of mass <span class="arithmatex">\( m \)</span> orbiting a much larger mass <span class="arithmatex">\( M \)</span> in a nearly circular orbit, Newton’s Second Law and the gravitational force equation give:</p>
+<div class="arithmatex">\[
+F = m a
+\]</div>
+<p>where the centripetal acceleration is given by:</p>
+<div class="arithmatex">\[
+a = \frac{v^2}{r}
+\]</div>
+<p>The gravitational force between the two bodies is:</p>
+<div class="arithmatex">\[
+F = \frac{G M m}{r^2}
+\]</div>
+<p>Equating the gravitational force to the centripetal force:</p>
+<div class="arithmatex">\[
+\frac{G M m}{r^2} = m \frac{v^2}{r}
+\]</div>
+<p>Canceling <span class="arithmatex">\( m \)</span> and expressing velocity in terms of the orbital period <span class="arithmatex">\( T \)</span> (since <span class="arithmatex">\( v = \frac{2 \pi r}{T} \)</span>):</p>
+<div class="arithmatex">\[
+\frac{G M}{r^2} = \frac{(2\pi r)^2}{T^2 r}
+\]</div>
+<p>Rearranging, we get:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2}{G M} r^3
+\]</div>
+<p>which confirms <strong>Kepler's Third Law</strong>: the square of the orbital period is proportional to the cube of the orbital radius.</p>
+<h3 id="2-implications-for-astronomy">2. Implications for Astronomy</h3>
+<ul>
+<li>This relationship allows astronomers to determine planetary masses and distances in exoplanetary systems.</li>
+<li>It is used in calculating satellite orbits around Earth and other planets.</li>
+<li>The formula generalizes to elliptical orbits when replacing <span class="arithmatex">\( r \)</span> with the <strong>semi-major axis</strong>.</li>
+</ul>
+<h3 id="3-real-world-examples">3. Real-World Examples</h3>
+<ul>
+<li><strong>The Moon’s Orbit Around Earth</strong>:</li>
+<li>Using Earth's mass <span class="arithmatex">\( M \approx 5.972 \times 10^{24} \)</span> kg and the Moon’s orbital radius <span class="arithmatex">\( r \approx 3.84 \times 10^8 \)</span> m, we can predict the Moon’s orbital period.</li>
+<li><strong>Planets in the Solar System</strong>:</li>
+<li>Kepler’s Law is used to estimate planetary years based on their distance from the Sun.</li>
+</ul>
+<h3 id="4-extension-to-elliptical-orbits">4. Extension to Elliptical Orbits</h3>
+<p>For elliptical orbits, the same relationship holds when <span class="arithmatex">\( r \)</span> is replaced by the semi-major axis <span class="arithmatex">\( a \)</span>, allowing the same methodology to be applied to comets, asteroids, and exoplanets.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
