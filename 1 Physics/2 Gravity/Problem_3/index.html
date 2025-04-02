@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 3 - Physics and Mathematics</title>
+<title>Trajectories of a Freely Released Payload Near Earth - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 3";
+        var mkdocs_page_name = "Trajectories of a Freely Released Payload Near Earth";
         var mkdocs_page_input_path = "1 Physics/2 Gravity/Problem_3.md";
         var mkdocs_page_url = null;
       </script>
@@ -58,8 +58,24 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Escape Velocities and Cosmic Velocities</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Trajectories of a Freely Released Payload Near Earth</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-and-solution">Task and Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-analysis-of-possible-trajectories">1. Analysis of Possible Trajectories</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-numerical-analysis-of-payload-path">2. Numerical Analysis of Payload Path</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-relation-to-orbital-insertion-reentry-and-escape">3. Relation to Orbital Insertion, Reentry, and Escape</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-simulation-and-visualization">4. Simulation and Visualization</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-real-world-applications">5. Real-World Applications</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +179,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">2 Gravity</li>
-<li class="breadcrumb-item active">Problem 3</li>
+<li class="breadcrumb-item active">Trajectories of a Freely Released Payload Near Earth</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +187,81 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-3">Problem 3</h1>
+<h1 id="trajectories-of-a-freely-released-payload-near-earth">Trajectories of a Freely Released Payload Near Earth</h1>
+<h2 id="motivation">Motivation</h2>
+<p>When an object is released from a moving rocket near Earth, its trajectory depends on initial conditions and gravitational forces. This scenario presents a rich problem, blending principles of orbital mechanics and numerical methods. Understanding the potential trajectories is vital for space missions, such as deploying payloads or returning objects to Earth.</p>
+<h2 id="task-and-solution">Task and Solution</h2>
+<h3 id="1-analysis-of-possible-trajectories">1. Analysis of Possible Trajectories</h3>
+<p>When a payload is released from a moving rocket near Earth, its trajectory is governed by the gravitational forces acting on it. The general types of trajectories that can occur are:</p>
+<ul>
+<li><strong>Parabolic Trajectory</strong>:</li>
+<li>
+<p>A parabolic trajectory occurs when the velocity of the payload is exactly equal to the escape velocity for that altitude. It results in a path that comes back to Earth or escapes at exactly the right angle.</p>
+</li>
+<li>
+<p><strong>Elliptical Trajectory</strong>:</p>
+</li>
+<li>
+<p>If the payload has a velocity less than the escape velocity, its path will be elliptical, meaning it will follow an orbit around Earth and eventually return.</p>
+</li>
+<li>
+<p><strong>Hyperbolic Trajectory</strong>:</p>
+</li>
+<li>If the payload's velocity exceeds the escape velocity, the trajectory will be hyperbolic, meaning it will escape Earth's gravity and continue into space.</li>
+</ul>
+<h3 id="2-numerical-analysis-of-payload-path">2. Numerical Analysis of Payload Path</h3>
+<p>To compute the path of the payload released near Earth, we use the gravitational force equation derived from Newton’s Law of Gravitation:</p>
+<div class="arithmatex">\[
+F = \frac{GMm}{r^2}
+\]</div>
+<p>where:
+- <span class="arithmatex">\( $G$ \)</span> is the gravitational constant $$ 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} $$
+- <span class="arithmatex">\( $M$ \)</span> is the mass of Earth $$ 5.972 \times 10^{24} \, \text{kg} $$
+- <span class="arithmatex">\( $m$ \)</span> is the mass of the payload,
+- <span class="arithmatex">\( $r$ \)</span> is the distance from the center of Earth to the payload.</p>
+<p>The acceleration due to gravity on the payload is given by:</p>
+<div class="arithmatex">\[
+a = \frac{F}{m} = \frac{GM}{r^2}
+\]</div>
+<p>This equation governs the motion of the payload and can be solved numerically using methods like Euler’s method or Runge-Kutta to simulate the trajectory.</p>
+<h3 id="3-relation-to-orbital-insertion-reentry-and-escape">3. Relation to Orbital Insertion, Reentry, and Escape</h3>
+<ul>
+<li>
+<p><strong>Orbital Insertion</strong>:
+  If the payload's velocity is at the first cosmic velocity (orbital velocity), it will enter a stable circular orbit around Earth.</p>
+</li>
+<li>
+<p><strong>Reentry</strong>:
+  If the payload’s trajectory is elliptical with an apogee (farthest point) outside of Earth’s atmosphere, it will reenter and potentially burn up due to atmospheric friction. </p>
+</li>
+<li>
+<p><strong>Escape</strong>:
+  If the payload has a velocity greater than or equal to the second cosmic velocity, it will escape Earth’s gravity and continue on a hyperbolic trajectory.</p>
+</li>
+</ul>
+<h3 id="4-simulation-and-visualization">4. Simulation and Visualization</h3>
+<p>Numerical simulations can be performed to visualize the motion of the payload based on initial conditions such as position, velocity, and altitude. For example, using the following initial conditions:
+- Position: <span class="arithmatex">\( $r_0$ \)</span> (distance from Earth's center),
+- Velocity: <span class="arithmatex">\( $v_0$ \)</span> (speed at release),
+- Direction: Angle of release.</p>
+<p>The motion can be simulated to observe the trajectory of the payload (whether it follows a parabolic, elliptical, or hyperbolic path).</p>
+<p>The visualization can include:
+- <strong>Time vs Position</strong> plots to show how the payload’s position changes over time.
+- <strong>Phase Space</strong> plots (position vs velocity) to reveal the nature of the trajectory.
+- <strong>Orbital Paths</strong> to visualize the shape and type of orbit (parabolic, elliptical, or hyperbolic).</p>
+<h3 id="5-real-world-applications">5. Real-World Applications</h3>
+<ul>
+<li>
+<p><strong>Space Mission Planning</strong>: Understanding these trajectories is critical in planning payload releases, such as for satellite deployment, space exploration, and interplanetary missions.</p>
+</li>
+<li>
+<p><strong>Satellite Deployment</strong>: By controlling the release velocity and angle, satellites can be placed in desired orbits.</p>
+</li>
+<li>
+<p><strong>Interplanetary Exploration</strong>: By achieving the right initial velocity and trajectory, spacecraft can be directed to other planets or escape Earth’s gravitational influence.</p>
+</li>
+</ul>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
