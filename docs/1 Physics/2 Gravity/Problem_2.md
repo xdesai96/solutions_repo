@@ -16,9 +16,9 @@ The concept of escape velocity is crucial for understanding the conditions requi
   $$
 
   where:
-  - \( G \) is the gravitational constant $$ 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} $$
-  - \( M \) is the mass of the celestial body,
-  - \( r \) is the radius of the celestial body (distance from the center).
+  - $ G $ is the gravitational constant $$ 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} $$
+  - $ M $ is the mass of the celestial body,
+  - $ r $ is the radius of the celestial body (distance from the center).
 
 - **Second Cosmic Velocity**:
   The second cosmic velocity is the minimum speed an object must have to escape the gravitational pull of the celestial body. It corresponds to the escape velocity, which allows the object to move indefinitely away from the body.
@@ -44,7 +44,7 @@ The concept of escape velocity is crucial for understanding the conditions requi
 
 ### 2. Analysis of the Mathematical Derivations and Parameters
 - **Escape Velocity**:
-  Escape velocity is the minimum velocity an object needs to break free from the gravitational influence of a celestial body without any further propulsion. It depends on the mass \( M \) of the body and the radius \( r \) from its center.
+  Escape velocity is the minimum velocity an object needs to break free from the gravitational influence of a celestial body without any further propulsion. It depends on the mass $ M $ of the body and the radius $ r $ from its center.
   
 - **Cosmic Velocities and Their Relation**:
   - The first cosmic velocity depends on the mass and radius of the celestial body and gives the velocity for stable orbiting.

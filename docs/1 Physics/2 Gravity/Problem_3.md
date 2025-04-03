@@ -25,10 +25,10 @@ F = \frac{GMm}{r^2}
 $$
 
 where:
-- \( $G$ \) is the gravitational constant $$ 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} $$
-- \( $M$ \) is the mass of Earth $$ 5.972 \times 10^{24} \, \text{kg} $$
-- \( $m$ \) is the mass of the payload,
-- \( $r$ \) is the distance from the center of Earth to the payload.
+- $G$ is the gravitational constant $$ 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} $$
+- $M$ is the mass of Earth $$ 5.972 \times 10^{24} \, \text{kg} $$
+- $m$ is the mass of the payload,
+- $r$ is the distance from the center of Earth to the payload.
 
 The acceleration due to gravity on the payload is given by:
 
@@ -50,8 +50,8 @@ This equation governs the motion of the payload and can be solved numerically us
 
 ### 4. Simulation and Visualization
 Numerical simulations can be performed to visualize the motion of the payload based on initial conditions such as position, velocity, and altitude. For example, using the following initial conditions:
-- Position: \( $r_0$ \) (distance from Earth's center),
-- Velocity: \( $v_0$ \) (speed at release),
+- Position: $r_0$ (distance from Earth's center),
+- Velocity: $v_0$ (speed at release),
 - Direction: Angle of release.
 
 The motion can be simulated to observe the trajectory of the payload (whether it follows a parabolic, elliptical, or hyperbolic path).
