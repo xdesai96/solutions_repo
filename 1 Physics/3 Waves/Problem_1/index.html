@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Interference Patterns on a Water Surface - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Interference Patterns on a Water Surface";
         var mkdocs_page_input_path = "1 Physics/3 Waves/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -64,8 +64,32 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">3 Waves</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Interference Patterns on a Water Surface</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-and-solution">Task and Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-select-a-regular-polygon">1. Select a Regular Polygon</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-position-the-sources">2. Position the Sources</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-wave-equations">3. Wave Equations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-superposition-of-waves">4. Superposition of Waves</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-analyze-interference-patterns">5. Analyze Interference Patterns</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#6-visualization">6. Visualization</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#7-considerations">7. Considerations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#8-real-world-applications">8. Real-World Applications</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deliverables">Deliverables</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +187,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">3 Waves</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Interference Patterns on a Water Surface</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +195,75 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="interference-patterns-on-a-water-surface">Interference Patterns on a Water Surface</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Interference occurs when waves from different sources overlap, creating new patterns. On a water surface, this can be easily observed when ripples from different points meet, forming distinctive interference patterns. These patterns can show us how waves combine in different ways, either reinforcing each other or canceling out.</p>
+<p>Studying these patterns helps us understand wave behavior in a simple, visual way. It also allows us to explore important concepts, like the relationship between wave phase and the effects of multiple sources. This task offers a hands-on approach to learning about wave interactions and their real-world applications, making it an interesting and engaging way to dive into wave physics.</p>
+<h2 id="task-and-solution">Task and Solution</h2>
+<h3 id="1-select-a-regular-polygon">1. Select a Regular Polygon</h3>
+<p>Let's choose an <strong>equilateral triangle</strong> for simplicity. We place three point wave sources at the vertices of this triangle.</p>
+<h3 id="2-position-the-sources">2. Position the Sources</h3>
+<p>Let the wave sources be located at the vertices of the equilateral triangle in the 2D plane. Each source emits circular waves with the same frequency, amplitude, and wavelength. The displacement of the water surface at any point $ P $ on the surface, at time $ t $, will be influenced by the superposition of the waves from all the sources.</p>
+<h3 id="3-wave-equations">3. Wave Equations</h3>
+<p>The wave emitted from a point source at position $ \vec{r}_i $ (where $ i $ is the index for the source) is given by:</p>
+<div class="arithmatex">\[
+\psi_i(\vec{r}, t) = A \cos(k |\vec{r} - \vec{r}_i| - \omega t + \phi_i)
+\]</div>
+<p>Where:
+- $ A $ is the amplitude of the wave,
+- $ k = \frac{2\pi}{\lambda} $ is the wave number (related to the wavelength $ \lambda $),
+- $ \omega = 2\pi f $ is the angular frequency (related to the frequency $ f $),
+- $ |\vec{r} - \vec{r}_i| $ is the distance between the observation point $ P $ and the source $ \vec{r}_i $,
+- $ \phi_i $ is the phase of the wave from the source at time $ t = 0 $.</p>
+<h3 id="4-superposition-of-waves">4. Superposition of Waves</h3>
+<p>The total displacement at point $ \vec{r} $ is the sum of the displacements from all $ N $ sources. For the equilateral triangle, where the sources are at $ \vec{r}_1, \vec{r}_2, \vec{r}_3 $, the total displacement $ \psi(\vec{r}, t) $ is:</p>
+<div class="arithmatex">\[
+\psi(\vec{r}, t) = \sum_{i=1}^{N} \psi_i(\vec{r}, t)
+\]</div>
+<p>For three sources:</p>
+<div class="arithmatex">\[
+\psi(\vec{r}, t) = A \sum_{i=1}^{3} \cos(k |\vec{r} - \vec{r}_i| - \omega t + \phi_i)
+\]</div>
+<h3 id="5-analyze-interference-patterns">5. Analyze Interference Patterns</h3>
+<p>To understand the interference patterns, we need to look at the resulting displacement $ \psi(\vec{r}, t) $ as a function of the position $ \vec{r} $ and time $ t $</p>
+<ul>
+<li>
+<p><strong>Constructive Interference</strong> occurs when the waves from the sources are in phase, leading to larger amplitudes at certain points. This happens when the distance to each source is such that the phases align.</p>
+</li>
+<li>
+<p><strong>Destructive Interference</strong> occurs when the waves from the sources are out of phase, leading to cancelation. This happens when the distances to each source result in phase differences that cause the waves to cancel each other out.</p>
+</li>
+</ul>
+<h3 id="6-visualization">6. Visualization</h3>
+<p>We can now visualize the interference pattern formed by the superposition of the waves from the three sources. A graphical representation of the surface displacement can help identify regions of constructive and destructive interference.</p>
+<h4 id="example-for-an-equilateral-triangle">Example for an Equilateral Triangle:</h4>
+<p>Consider an equilateral triangle where the wave sources are positioned at the vertices. We can simulate and visualize the interference pattern as follows:</p>
+<ol>
+<li><strong>Amplitude Plot</strong>: A 2D plot showing the displacement at different points on the water surface.</li>
+<li><strong>Interference Zones</strong>: Areas where the waves reinforce each other (constructive interference) and where they cancel each other out (destructive interference).</li>
+</ol>
+<h4 id="simulated-interference-pattern">Simulated Interference Pattern:</h4>
+<p>For simplicity, we could simulate the behavior using a basic numerical model where we calculate the displacement $ \psi(\vec{r}, t) $ at each point in space and color the points based on their amplitude.</p>
+<h3 id="7-considerations">7. Considerations</h3>
+<ul>
+<li><strong>Coherent Sources</strong>: All sources emit waves with the same frequency, wavelength, and amplitude, and they maintain a constant phase difference.</li>
+<li><strong>Wave Propagation</strong>: The waves spread outward in all directions from the point sources, and their superposition can be studied by examining the resulting displacement at various points on the surface.</li>
+</ul>
+<h3 id="8-real-world-applications">8. Real-World Applications</h3>
+<p>Interference patterns on water surfaces have real-world analogs in optics, acoustics, and other fields. The principle of superposition is used to analyze wave interactions in:</p>
+<ul>
+<li><strong>Optical Interference</strong>: Diffraction patterns in double-slit experiments.</li>
+<li><strong>Acoustic Waves</strong>: Sound interference in open spaces.</li>
+<li><strong>Water Wave Phenomena</strong>: The interaction of ripples in oceans, lakes, and ponds.</li>
+</ul>
+<hr/>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li><strong>Markdown Document</strong>: Explaining the task and solution, including wave equations and superposition principles.</li>
+<li><strong>Graphical Representations</strong>: Visualizing the interference patterns for the equilateral triangle configuration.</li>
+<li><strong>Discussion</strong>: Explaining the constructive and destructive interference regions observed in the simulation.</li>
+</ul>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
