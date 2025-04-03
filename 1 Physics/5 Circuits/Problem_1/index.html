@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Equivalent Resistance Using Graph Theory - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Equivalent Resistance Using Graph Theory";
         var mkdocs_page_input_path = "1 Physics/5 Circuits/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -70,14 +70,28 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">4 Electromagnetism</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../4%20Electromagnetism/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../4%20Electromagnetism/Problem_1/">Simulating the Effects of the Lorentz Force</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">5 Circuits</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Equivalent Resistance Using Graph Theory</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-and-solution">Task and Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#option-1-simplified-task-algorithm-description">Option 1: Simplified Task – Algorithm Description</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#option-2-advanced-task-full-implementation">Option 2: Advanced Task – Full Implementation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-efficiency-and-potential-improvements">3. Efficiency and Potential Improvements</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deliverables">Deliverables</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +177,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">5 Circuits</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Equivalent Resistance Using Graph Theory</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,11 +185,131 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="equivalent-resistance-using-graph-theory">Equivalent Resistance Using Graph Theory</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Calculating the equivalent resistance of a circuit is essential for designing efficient electrical systems. Traditional methods like series and parallel combinations can be cumbersome when dealing with complex circuits. Graph theory provides an elegant solution by representing the circuit as a graph, where nodes represent junctions and edges represent resistors.</p>
+<p>This method simplifies the calculation process and is especially useful for circuit simulation software and optimization problems. It also highlights the intersection of electrical circuits and mathematical concepts, making it a valuable approach for engineers and scientists.</p>
+<h2 id="task-and-solution">Task and Solution</h2>
+<h3 id="option-1-simplified-task-algorithm-description">Option 1: Simplified Task – Algorithm Description</h3>
+<p>The algorithm for calculating the equivalent resistance using graph theory involves representing the circuit as a graph and iteratively reducing it using series and parallel rules. Here's how we can approach it:</p>
+<h4 id="step-by-step-algorithm"><strong>Step-by-step Algorithm:</strong></h4>
+<ol>
+<li><strong>Input:</strong></li>
+<li>A graph representation of the circuit, where nodes represent junctions and edges represent resistors.</li>
+<li>
+<p>Each edge has a weight corresponding to the resistance value.</p>
+</li>
+<li>
+<p><strong>Identification of Series and Parallel Connections:</strong></p>
+</li>
+<li>
+<p><strong>Series Connections</strong>: Resistors in series are connected end-to-end. The equivalent resistance is simply the sum of the individual resistances:</p>
+<p>$$
+ R_{\text{eq}} = R_1 + R_2 + \cdots + R_n
+ $$</p>
+</li>
+<li>
+<p><strong>Parallel Connections</strong>: Resistors in parallel are connected across the same two nodes. The equivalent resistance is given by:</p>
+<p>$$
+ \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots + \frac{1}{R_n}
+ $$</p>
+</li>
+<li>
+<p><strong>Graph Simplification:</strong></p>
+</li>
+<li>Identify series and parallel combinations of resistors and replace them with their equivalent resistance.</li>
+<li>If a series combination is found, replace the connected resistors with a single equivalent resistor in the graph.</li>
+<li>
+<p>If a parallel combination is found, replace the resistors with the equivalent parallel resistance.</p>
+</li>
+<li>
+<p><strong>Iterative Reduction:</strong></p>
+</li>
+<li>
+<p>Continue applying the series and parallel reduction rules until only a single equivalent resistance remains.</p>
+</li>
+<li>
+<p><strong>Output:</strong></p>
+</li>
+<li>The final equivalent resistance of the circuit.</li>
+</ol>
+<h4 id="explanation-of-nested-combinations"><strong>Explanation of Nested Combinations:</strong></h4>
+<ul>
+<li>The algorithm checks for series and parallel connections at every step and reduces the graph iteratively. It ensures that even nested combinations (e.g., series and parallel resistors combined) are handled by recursively applying the reduction rules.</li>
+</ul>
+<hr/>
+<h3 id="option-2-advanced-task-full-implementation">Option 2: Advanced Task – Full Implementation</h3>
+<p>For the advanced task, we can implement the algorithm in Python using the <code>networkx</code> library for graph manipulation. Below is a detailed explanation of how the algorithm can be implemented.</p>
+<h4 id="steps-for-implementation"><strong>Steps for Implementation:</strong></h4>
+<ol>
+<li><strong>Input the Circuit Graph:</strong></li>
+<li>
+<p>The circuit is represented as a graph where each edge has a resistance value. We use the <code>networkx</code> library to create and manipulate the graph.</p>
+</li>
+<li>
+<p><strong>Detect Series and Parallel Connections:</strong></p>
+</li>
+<li>Traverse the graph to find series and parallel connections.</li>
+<li>
+<p>Apply the respective formulas for calculating the equivalent resistance in series and parallel.</p>
+</li>
+<li>
+<p><strong>Iterative Graph Simplification:</strong></p>
+</li>
+<li>Use depth-first search (DFS) or breadth-first search (BFS) to traverse the graph and identify connected components that are in series or parallel.</li>
+<li>
+<p>Replace each series or parallel group with its equivalent resistance and update the graph.</p>
+</li>
+<li>
+<p><strong>Handle Nested Configurations:</strong></p>
+</li>
+<li>
+<p>Continue reducing the graph iteratively, handling nested series and parallel configurations, until a single node (representing the entire circuit) remains.</p>
+</li>
+<li>
+<p><strong>Output the Final Equivalent Resistance:</strong></p>
+</li>
+<li>Once the graph is fully reduced, the remaining resistance is the equivalent resistance of the circuit.</li>
+</ol>
+<hr/>
+<h4 id="example-circuit-configurations"><strong>Example Circuit Configurations:</strong></h4>
+<ol>
+<li><strong>Simple Series Combination</strong>:</li>
+<li>
+<p>A circuit with two resistors in series: $ R_1 = 10 \, \Omega $ and $ R_2 = 20 \, \Omega $. The equivalent resistance is:</p>
+<p>$$
+ R_{\text{eq}} = 10 + 20 = 30 \, \Omega
+ $$</p>
+</li>
+<li>
+<p><strong>Simple Parallel Combination</strong>:</p>
+</li>
+<li>
+<p>A circuit with two resistors in parallel: $ R_1 = 10 \, \Omega $ and $ R_2 = 20 \, \Omega $. The equivalent resistance is:</p>
+<p>$$
+ \frac{1}{R_{\text{eq}}} = \frac{1}{10} + \frac{1}{20} \quad \Rightarrow \quad R_{\text{eq}} = 6.67 \, \Omega
+ $$</p>
+</li>
+<li>
+<p><strong>Nested Configuration</strong>:</p>
+</li>
+<li>A more complex circuit with series and parallel combinations. The algorithm will recursively reduce the graph until only one equivalent resistance remains.</li>
+</ol>
+<h3 id="3-efficiency-and-potential-improvements">3. <strong>Efficiency and Potential Improvements</strong></h3>
+<p>The algorithm's efficiency depends on the complexity of the circuit. The time complexity for simplifying the graph is $ O(E + V) $, where $ E $ is the number of edges (resistors) and $ V $ is the number of nodes (junctions). The algorithm performs iterative graph traversal and modification, which ensures that all combinations are correctly simplified.</p>
+<p>Potential improvements could include:
+- Using advanced graph traversal techniques to improve the identification of series and parallel combinations.
+- Implementing a more efficient algorithm for handling large, complex networks.</p>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li><strong>Pseudocode and Explanation</strong>: Detailed pseudocode for calculating the equivalent resistance.</li>
+<li><strong>Examples</strong>: Three input examples with series, parallel, and nested combinations.</li>
+<li><strong>Efficiency Analysis</strong>: Discussion on the efficiency of the algorithm and potential optimizations.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../4%20Electromagnetism/Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../4%20Electromagnetism/Problem_1/" title="Simulating the Effects of the Lorentz Force"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../../6%20Statistics/Problem_1/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>

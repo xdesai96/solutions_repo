@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Simulating the Effects of the Lorentz Force - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Simulating the Effects of the Lorentz Force";
         var mkdocs_page_input_path = "1 Physics/4 Electromagnetism/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -70,15 +70,35 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">4 Electromagnetism</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Simulating the Effects of the Lorentz Force</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-and-solution">Task and Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-exploration-of-applications">1. Exploration of Applications</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-simulating-particle-motion">2. Simulating Particle Motion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-parameter-exploration">3. Parameter Exploration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-visualization">4. Visualization</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-practical-systems">5. Practical Systems</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#6-suggestions-for-extension">6. Suggestions for Extension</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deliverables">Deliverables</a>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">5 Circuits</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Equivalent Resistance Using Graph Theory</a>
 </li>
 </ul>
 </li>
@@ -163,7 +183,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">4 Electromagnetism</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Simulating the Effects of the Lorentz Force</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,12 +191,109 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="simulating-the-effects-of-the-lorentz-force">Simulating the Effects of the Lorentz Force</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The Lorentz force governs the motion of charged particles in electric and magnetic fields. It plays a fundamental role in various areas of physics such as plasma physics, particle accelerators, and astrophysics. By simulating the motion of charged particles, we can visualize the effects of this force and explore real-world applications.</p>
+<h2 id="task-and-solution">Task and Solution</h2>
+<h3 id="1-exploration-of-applications">1. Exploration of Applications</h3>
+<p>The Lorentz force is crucial in many systems where charged particles are manipulated by electric and magnetic fields. Some key applications include:</p>
+<ul>
+<li>
+<p><strong>Particle Accelerators</strong>: In cyclotrons and synchrotrons, charged particles are accelerated using electric and magnetic fields. The Lorentz force controls the trajectories of these particles as they gain energy.</p>
+</li>
+<li>
+<p><strong>Mass Spectrometers</strong>: Charged particles are deflected by magnetic fields, which helps determine their mass-to-charge ratio.</p>
+</li>
+<li>
+<p><strong>Plasma Confinement</strong>: In fusion reactors, magnetic fields are used to confine and control the motion of plasma particles.</p>
+</li>
+</ul>
+<h3 id="2-simulating-particle-motion">2. Simulating Particle Motion</h3>
+<p>The Lorentz force is given by:</p>
+<div class="arithmatex">\[
+\vec{F} = q (\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<p>Where:
+- $ q $ is the charge of the particle,
+- $ \vec{E} $ is the electric field,
+- $ \vec{v} $ is the velocity of the particle,
+- $ \vec{B} $ is the magnetic field.</p>
+<p>To simulate the motion of a charged particle, we consider different scenarios:</p>
+<h4 id="21-uniform-magnetic-field">2.1 Uniform Magnetic Field</h4>
+<p>When a charged particle moves through a uniform magnetic field <span class="arithmatex">\( \vec{B} \)</span>, it experiences a force that causes it to move in a circular path. The radius of this path, known as the Larmor radius, is given by:</p>
+<div class="arithmatex">\[
+r_L = \frac{mv}{|q|B}
+\]</div>
+<p>Where:
+- $ m $ is the mass of the particle,
+- $ v $ is the velocity of the particle,
+- $ q $ is the charge of the particle,
+- $ B $ is the magnetic field strength.</p>
+<h4 id="22-combined-electric-and-magnetic-fields">2.2 Combined Electric and Magnetic Fields</h4>
+<p>In the presence of both electric and magnetic fields, the trajectory of the particle becomes more complex. The total force acting on the particle is:</p>
+<div class="arithmatex">\[
+\vec{F} = q (\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<p>This results in helical or spiral motion, depending on the relative strengths and directions of the fields.</p>
+<h4 id="23-crossed-electric-and-magnetic-fields">2.3 Crossed Electric and Magnetic Fields</h4>
+<p>When electric and magnetic fields are perpendicular to each other, a charged particle experiences a combined force that causes it to drift. The drift velocity <span class="arithmatex">\( \vec{v}_d \)</span> is given by:</p>
+<div class="arithmatex">\[
+\vec{v}_d = \frac{\vec{E} \times \vec{B}}{B^2}
+\]</div>
+<p>This results in a motion where the particle drifts in a direction perpendicular to both fields, while still experiencing circular motion due to the magnetic field.</p>
+<h3 id="3-parameter-exploration">3. Parameter Exploration</h3>
+<p>To understand the effects of the Lorentz force, we explore how various parameters influence the trajectory:</p>
+<ul>
+<li>
+<p><strong>Field Strengths</strong>: The electric field $ \vec{E} $ and magnetic field $ \vec{B} $ affect the curvature of the particle's path. Increasing $ B $ results in a smaller Larmor radius, while increasing $ E $ can change the drift velocity.</p>
+</li>
+<li>
+<p><strong>Initial Particle Velocity</strong>: The initial velocity <span class="arithmatex">\( \vec{v} \)</span> of the particle will affect the radius of the circular motion and the drift velocity. High velocities lead to larger radii and faster drift motion.</p>
+</li>
+<li>
+<p><strong>Charge and Mass</strong>: The charge <span class="arithmatex">\( q \)</span> and mass <span class="arithmatex">\( m \)</span> of the particle affect both the Larmor radius and the drift velocity. A larger mass results in a larger Larmor radius, while a larger charge increases the deflection in the magnetic field.</p>
+</li>
+</ul>
+<h3 id="4-visualization">4. Visualization</h3>
+<p>We can simulate the trajectory of a charged particle in different field configurations and visualize its path in 2D and 3D.</p>
+<h4 id="example-scenarios">Example Scenarios:</h4>
+<ul>
+<li>
+<p><strong>Uniform Magnetic Field</strong>: Simulate a particle moving in a uniform magnetic field, and visualize its circular motion.</p>
+</li>
+<li>
+<p><strong>Combined Fields</strong>: Simulate a particle in the presence of both electric and magnetic fields, showing how the motion evolves into a helical trajectory.</p>
+</li>
+<li>
+<p><strong>Crossed Fields</strong>: Visualize the drift motion of a charged particle in perpendicular electric and magnetic fields.</p>
+</li>
+</ul>
+<h4 id="graphical-representations">Graphical Representations:</h4>
+<p>We can generate 2D and 3D plots showing the particle's path and highlight important physical phenomena like:
+- <strong>Larmor Radius</strong>: The radius of the circular motion.
+- <strong>Drift Velocity</strong>: The velocity of the particle as it drifts due to crossed fields.</p>
+<h3 id="5-practical-systems">5. Practical Systems</h3>
+<p>The simulation results can be related to practical systems:</p>
+<ul>
+<li><strong>Cyclotrons</strong>: Charged particles are accelerated in a circular path using magnetic fields.</li>
+<li><strong>Magnetic Traps</strong>: In plasma confinement, the Lorentz force is used to control the movement of plasma in magnetic fields.</li>
+</ul>
+<h3 id="6-suggestions-for-extension">6. Suggestions for Extension</h3>
+<p>The simulation can be extended to more complex scenarios, such as:
+- <strong>Non-uniform Magnetic Fields</strong>: Simulating the motion of particles in magnetic fields with varying strengths.
+- <strong>Relativistic Effects</strong>: Accounting for relativistic speeds as particles approach the speed of light.
+- <strong>Plasma Dynamics</strong>: Simulating the motion of a large number of particles in a plasma.</p>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li><strong>Markdown Document</strong>: Explaining the task and solution, including the Lorentz force and the different field configurations.</li>
+<li><strong>Visualizations</strong>: Showing the particle trajectories under various field configurations.</li>
+<li><strong>Discussion</strong>: Explaining the results and their relevance to practical systems like particle accelerators and magnetic traps.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../../3%20Waves/Problem_1/" title="Interference Patterns on a Water Surface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../../5%20Circuits/Problem_1/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../../5%20Circuits/Problem_1/" title="Equivalent Resistance Using Graph Theory">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
